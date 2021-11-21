@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaf</title>
+</head>
+<body>
+<h1>循环</h1>
+<div th:each="user,userIter:${studentList}">
+    <p th:text="${user.id}"></p>
+    <p th:text="${user.name}"></p>
+    <p th:text="${user.age}"></p>
+</div>
+
+<div th:each="user,userStat:${studentList}" th:object="${user}">
+    <p th:text="${userStat.count}"></p>
+    <p th:text="*{id}"></p>
+    <p th:text="*{name}"></p>
+    <p th:text="*{age}"></p>
+</div>
+<div align="center">
+    <table border="1px" cellpadding="0" cellspacing="0">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>age</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user,userStat:${studentList}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.age}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<hr>
+<p th:text="${data==true?'有数据':'无数据'}"></p>
+<p th:text="|${data}dddd|"></p><br>
+<p th:text="${#dates.format(mydate)}"></p>
+<p th:text="${#dates.format(mydate,'yyyy-MM-dd')}"></p>
+<p th:text="${#dates.format(mydate,'yyyy年-MM-dd HH:mm:ss')}"></p>
+
+<p th:text="${#numbers.formatDecimal(mynum,5,2)}"></p>
+</body>
+</html>
