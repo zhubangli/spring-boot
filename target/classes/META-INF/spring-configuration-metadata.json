@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "school",
+      "type": "com.boot.entity.School",
+      "sourceType": "com.boot.entity.School"
+    }
+  ],
+  "properties": [
+    {
+      "name": "school.address",
+      "type": "java.lang.String",
+      "sourceType": "com.boot.entity.School"
+    },
+    {
+      "name": "school.name",
+      "type": "java.lang.String",
+      "sourceType": "com.boot.entity.School"
+    },
+    {
+      "name": "school.website",
+      "type": "java.lang.String",
+      "sourceType": "com.boot.entity.School"
+    }
+  ],
+  "hints": []
+}
